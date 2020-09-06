@@ -88,7 +88,7 @@ namespace TinyMsgPack
                 throw new TinyMsgPackDeserializeException(
                     $"{nameof(ReadString)} - invalid string length {length}");
 
-            return StringEncoder.Decode(ReadNext(length));
+            return StringUtils.Decode(ReadNext(length));
         }
 
         public byte ReadUInt8()

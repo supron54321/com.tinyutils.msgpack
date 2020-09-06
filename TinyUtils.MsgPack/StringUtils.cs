@@ -4,7 +4,7 @@ using Unity.Collections.LowLevel.Unsafe;
 
 namespace TinyMsgPack
 {
-    public static unsafe class StringEncoder
+    public static unsafe class StringUtils
     {
         static UTF8Encoding _encoding = new UTF8Encoding();
 

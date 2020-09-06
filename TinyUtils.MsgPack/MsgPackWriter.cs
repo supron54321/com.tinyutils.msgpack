@@ -65,7 +65,7 @@ namespace TinyMsgPack
                 WriteNil();
                 return;
             }
-            int length = StringEncoder.GetEncodedLength(str);
+            int length = StringUtils.GetEncodedLength(str);
             if(length <= (MsgPackCode.MaxFixStr-MsgPackCode.MinFixStr))
                 WriteRaw8((byte)(length+MsgPackCode.MinFixStr));
             else if(length < byte.MaxValue)
@@ -84,7 +84,7 @@ namespace TinyMsgPack
                 WriteRawBigEndian32((uint)length);
             }
             _buffer.ResizeUninitialized(_buffer.Length+length);
-            StringEncoder.WriteEncodedString(str, (byte*)_buffer.GetUnsafePtr()+_buffer.Length-length, length);
+            StringUtils.WriteEncodedString(str, (byte*)_buffer.GetUnsafePtr()+_buffer.Length-length, length);
         }
 
         public void WriteNil()

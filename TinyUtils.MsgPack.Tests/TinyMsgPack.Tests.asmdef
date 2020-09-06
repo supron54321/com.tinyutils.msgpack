@@ -3,8 +3,8 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "TinyMsgPack",
-        "Unity.Collections"
+        "Unity.Collections",
+        "TinyUtils.MsgPack"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
