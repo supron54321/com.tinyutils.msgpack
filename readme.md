@@ -2,7 +2,7 @@
 
 Repository contains small and fast message pack serialization library, for Unity DOTS runtime.
 
-This library has only low level writers and readers. If you are interested in high level code generation, check [JsInterop](https://github.com/supron54321/com.tinyutils.jsinterop/) repository.
+This library provides only low level writers and readers. If you are interested in high level code generation, check [JsInterop](https://github.com/supron54321/com.tinyutils.jsinterop/) repository.
 
 # Usage
 
@@ -28,7 +28,7 @@ public int[] ReadIntArray(NativeArray<byte> buffer)
 ## Writer
 
 ```C#
-public NativeArray<byte> WriteIntArray(int[] array)
+public NativeArray<byte> WriteIntArray(int[] array, Allocator allocator)
 {
     using(MsgPackWriter writer = new MsgPackWriter(Allocator.Temp))
     {
@@ -36,11 +36,13 @@ public NativeArray<byte> WriteIntArray(int[] array)
         {
             writer.WriteArrayHeader(array.Length);
             foreach(var value in array)
-                writer.WriteInt(value);
+                writer.WriteInteger(value);
         }
         else{
             writer.WriteNil();
         }
+
+        return writer.ToArray(allocator);
     }
 }
 ```
