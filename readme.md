@@ -1,6 +1,6 @@
 # Tiny message pack library for unity
 
-Repository contains small and fast message pack serialization library, for Unity DOTS runtime.
+Repository contains small and fast message pack serialization library, for Unity DOTS runtime and WebGL.
 
 This library provides only low level writers and readers. If you are interested in high level code generation, check [JsInterop](https://github.com/supron54321/com.tinyutils.jsinterop/) repository.
 
