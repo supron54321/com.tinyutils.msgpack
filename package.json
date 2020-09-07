@@ -1,6 +1,6 @@
 {
   "name": "com.tinyutils.msgpack",
-  "displayName": "TinyUtils message pack",
+  "displayName": "TinyUtils message pack serializer",
   "version": "1.0.0",
   "unity": "2019.3",
   "description": "Fast low level serialization library, compatible with DOTS runtime.",
